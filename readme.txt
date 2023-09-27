@@ -1,0 +1,1 @@
+made with help of vidoe course Создаем_Telegram_бот_магазин_товаров
