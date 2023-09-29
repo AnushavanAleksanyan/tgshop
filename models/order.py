@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer, Float, Boolean, ForeignKey, DataTime
+from sqlalchemy import Column, String, Integer, Float, Boolean, ForeignKey, DateTime
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy.orm import declarative_base
 
@@ -12,8 +12,8 @@ class Order(Base):
 
     id = Column(Integer, primary_key=True)
     quantity = Column(Integer)
-    data = Column(DataTime)
-    product_id = Column(Integer, ForeignKey(product.id))
+    data = Column(DateTime)
+    product_id = Column(Integer, ForeignKey('products.id'))
     user_id = Column(Integer)
     products = relationship(
         Products,

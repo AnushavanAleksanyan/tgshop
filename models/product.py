@@ -5,7 +5,7 @@ from models.category import Category
 
 Base = declarative_base()
 
-class Products(base):
+class Products(Base):
     __tablename__ = 'products'
     id = Column(Integer, primary_key=True)
     name = Column(String, index=True)
