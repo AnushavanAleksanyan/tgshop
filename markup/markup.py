@@ -1,5 +1,6 @@
 # импортируем специальные типы телеграм бота для создания элементов интерфейса
-from telebot.types import KeyboardButton, ReplyKeyboardMarkup
+from telebot.types import KeyboardButton, ReplyKeyboardMarkup, ReplyKeyboardRemove, InlineKeyboardButton, \
+    InlineKeyboardMarkup
 # импортируем настройки и утилиты
 from settings import config
 # импортируем класс-менеджер для работы с библиотекой
@@ -55,4 +56,31 @@ class Keyboards:
         itm_btn_1 = self.set_btn('<<')
         # рассположение кнопок в меню
         self.markup.row(itm_btn_1)
+        return self.markup
+
+    def remove_menu(self):
+        '''հեռացնում է կնօպկայի տվյալները և վերադարձնում'''
+        return ReplyKeyboardRemove()
+
+    def category_menu(self):
+        '''ստեղծում է ապրանքների կատեգորիաների կնոպկաների ռազմետկա'''
+        self.markup = ReplyKeyboardMarkup(True, True, row_width=1)
+        self.markup.add(self.set_btn('SEMIPRODUCT'))
+        self.markup.add(self.set_btn('GROCERY'))
+        self.markup.add(self.set_btn('ICE_CREAM'))
+        self.markup.row(self.set_btn('<<'), self.set_btn('ORDER'))
+        return self.markup
+
+    def set_inline_btn(self, name):
+        '''ստեղծում և վերադարձնում է inline կնոպկա'''
+        return InlineKeyboardButton(str(name),
+                                    callback_data=str(name.id))
+
+    def set_select_category(self, category):
+        ''' ընտրված կատեգորիայում օնլայն կնոպկաների համար ռազմետկաների պատրաստում և վերադարձ'''
+        self.markup = InlineKeyboardMarkup(row_width=1)
+
+        for itm in self.BD.select_all_products_category(category):
+            self.markup.add(self.set_inline_btn(itm))
+
         return self.markup
