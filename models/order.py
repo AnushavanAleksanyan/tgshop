@@ -1,10 +1,8 @@
 from sqlalchemy import Column, String, Integer, Float, Boolean, ForeignKey, DateTime
 from sqlalchemy.orm import relationship, backref
-from sqlalchemy.orm import declarative_base
 
 from models.product import Products
-
-Base = declarative_base()
+from data_base.dbcore import Base
 
 class Order(Base):
 

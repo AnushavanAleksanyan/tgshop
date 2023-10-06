@@ -49,10 +49,10 @@ class HandlerAllText(Handler):
                               reply_markup=self.keybords.start_menu())
 
     def pressed_btn_product(self, message, product):
-        self.bot.send_message(message.chat.id, 'Կատեգորիա' + config.KEYBOARD[product],
+        self.bot.send_message(message.chat.id, 'Կատեգորիա` ' + config.KEYBOARD[product],
                               reply_markup=self.keybords.set_select_category(config.CATEGORY[product]))
         self.bot.send_message(message.chat.id, 'OK',
-                              reply_markup=self.keyboards.category_menu())
+                              reply_markup=self.keybords.category_menu())
 
 
     def handle(self):

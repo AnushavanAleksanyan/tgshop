@@ -58,7 +58,8 @@ class Keyboards:
         self.markup.row(itm_btn_1)
         return self.markup
 
-    def remove_menu(self):
+    @staticmethod
+    def remove_menu():
         '''հեռացնում է կնօպկայի տվյալները և վերադարձնում'''
         return ReplyKeyboardRemove()
 
@@ -71,6 +72,7 @@ class Keyboards:
         self.markup.row(self.set_btn('<<'), self.set_btn('ORDER'))
         return self.markup
 
+    @staticmethod
     def set_inline_btn(self, name):
         '''ստեղծում և վերադարձնում է inline կնոպկա'''
         return InlineKeyboardButton(str(name),
