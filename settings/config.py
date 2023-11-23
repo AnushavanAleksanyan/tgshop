@@ -3,7 +3,7 @@ from emoji import emojize
 
 TOKEN = "6401415271:AAHot77zVjngwpEi8bGHaX3onG2URlp-MDI"
 # название БД
-NAME_DB = 'products.sqlite'
+NAME_DB = 'products.db'
 # версия приложения
 VERSION = '0.0.1'
 # автор приложения
@@ -23,7 +23,7 @@ KEYBOARD = {
     'SETTINGS': emojize('⚙️ Կարգավորումներ'),
     'SEMIPRODUCT': emojize(':desktop_computer: Էլեկտրոնիկա'),
     'GROCERY': emojize(':house_with_garden: Անշարժ գույք'),
-    'ICE_CREAM': emojize(':man_mechanic: Աշխատանք'),
+    'WORK': emojize(':man_mechanic: Աշխատանք'),
     '<<': emojize('⏪'),
     '>>': emojize('⏩'),
     'BACK_STEP': emojize('◀️'),
@@ -42,7 +42,7 @@ KEYBOARD = {
 CATEGORY = {
     'SEMIPRODUCT': 1,
     'GROCERY': 2,
-    'ICE_CREAM': 3,
+    'WORK': 3,
 }
 
 # названия команд

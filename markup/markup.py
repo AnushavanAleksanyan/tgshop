@@ -68,12 +68,12 @@ class Keyboards:
         self.markup = ReplyKeyboardMarkup(True, True, row_width=1)
         self.markup.add(self.set_btn('SEMIPRODUCT'))
         self.markup.add(self.set_btn('GROCERY'))
-        self.markup.add(self.set_btn('ICE_CREAM'))
+        self.markup.add(self.set_btn('WORK'))
         self.markup.row(self.set_btn('<<'), self.set_btn('ORDER'))
         return self.markup
 
     @staticmethod
-    def set_inline_btn(self, name):
+    def set_inline_btn(name):
         '''ստեղծում և վերադարձնում է inline կնոպկա'''
         return InlineKeyboardButton(str(name),
                                     callback_data=str(name.id))

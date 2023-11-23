@@ -80,5 +80,5 @@ class HandlerAllText(Handler):
             if message.text == config.KEYBOARD['GROCERY']:
                 self.pressed_btn_product(message, 'GROCERY')
 
-            if message.text == config.KEYBOARD['ICE_CREAM']:
-                self.pressed_btn_product(message, 'ICE_CREAM')
+            if message.text == config.KEYBOARD['WORK']:
+                self.pressed_btn_product(message, 'WORK')
